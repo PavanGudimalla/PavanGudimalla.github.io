@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pavan Kumar Gudimalla | Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* For the typing effect cursor */
+        .typing-cursor {
+            display: inline-block;
+            width: 2px;
+            height: 1em;
+            background-color: #6366f1;
+            animation: blink 0.7s infinite;
+        }
+        @keyframes blink {
+            50% { opacity: 0; }
+        }
+
+        /* For scroll animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white">
+
+    <header class="bg-gray-900/80 backdrop-blur-lg fixed top-0 left-0 right-0 z-50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex-shrink-0">
+                    <a href="#" class="text-2xl font-bold text-white">Pavan Kumar Gudimalla</a>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="#about" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">About</a>
+                        <a href="#experience" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Experience</a>
+                        <a href="#education" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Education</a>
+                        <a href="#projects" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Projects</a>
+                        <a href="#skills" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Skills</a>
+                        <a href="#certifications" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Certifications</a>
+                        <a href="#contact" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Contact</a>
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
+                        <span class="sr-only">Open main menu</span>
+                        <svg class="h-6 w-6" id="menu-open-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                        </svg>
+                        <svg class="h-6 w-6 hidden" id="menu-close-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="md:hidden hidden" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#about" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">About</a>
+                <a href="#experience" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Experience</a>
+                <a href="#education" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Education</a>
+                <a href="#projects" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Projects</a>
+                <a href="#skills" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Skills</a>
+                <a href="#certifications" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Certifications</a>
+                <a href="#contact" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="pt-16">
+        <section id="hero" class="py-20 sm:py-32">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight">
+                    Hi, I'm <span id="typing-text"></span><span class="typing-cursor"></span>
+                </h1>
+                <p class="mt-4 text-lg sm:text-xl lg:text-2xl text-gray-300 max-w-3xl mx-auto reveal">
+                    A data-driven Media Planner and Business Analyst with a passion for digital advertising and data-driven strategies.
+                </p>
+                <a href="#projects" class="mt-8 inline-block bg-indigo-600 text-white font-bold py-3 px-8 rounded-lg hover:bg-indigo-700 transition-transform duration-300 hover:scale-105 reveal">
+                    View My Work
+                </a>
+            </div>
+        </section>
+
+        <section id="about" class="py-20 bg-gray-800">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 reveal">
+                <h2 class="text-3xl font-bold text-center text-white mb-12">About Me</h2>
+                <div class="flex flex-col md:flex-row items-center gap-12">
+                    <div class="md:w-1/3">
+                        <img class="rounded-full w-64 h-64 mx-auto object-cover" src="1725025943161.jpg" alt="Pavan Kumar Gudimalla">
+                    </div>
+                    <div class="md:w-2/3 text-lg text-gray-300 max-w-2xl mx-auto">
+                        <p>
+                           I'm a Business Analytics graduate student at the University of Dayton with over 2.5 years of professional experience in digital advertising. At MediaMint, I progressed from an intern to a senior media planner, where I honed my skills in campaign execution and data-driven strategy.
+                        </p>
+                        <p class="mt-4">
+                            My passion is using tools like R, Python, and Tableau to turn complex data into actionable insights. I'm always eager to take on new challenges and streamline processes to drive business success.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="experience" class="py-20">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 reveal">
+                <h2 class="text-3xl font-bold text-center text-white mb-12">Experience</h2>
+                <div class="max-w-4xl mx-auto">
+                    <div class="flex flex-col sm:flex-row gap-8">
+                        <div class="flex-shrink-0">
+                            <a href="https://www.mediamint.com/" target="_blank" rel="noopener noreferrer" title="Visit MediaMint Website">
+                                <img src="download.jpg" alt="MediaMint Logo" class="w-24 h-24 rounded-lg bg-white p-2">
+                            </a>
+                        </div>
+                        <div class="flex-grow">
+                            <h3 class="text-3xl font-bold text-white">MediaMint Pvt Limited</h3>
+                            <p class="text-lg text-indigo-400 font-semibold">Over 2.5 Years of Professional Experience (Feb 2022 - Aug 2024)</p>
+                            
+                            <div class="mt-6 space-y-8">
+                                <div>
+                                    <h4 class="text-xl font-bold text-white">Senior Media Planner</h4>
+                                    <p class="text-gray-300 mt-2">Designed and implemented effective digital advertising strategies, analyzing campaign performance to drive results and ensure client satisfaction.</p>
+                                    <ul class="list-disc list-inside text-gray-400 mt-2 space-y-1">
+                                        <li>Collaborated with sales and operations teams to streamline campaign workflows.</li>
+                                    </ul>
+                                </div>
+
+                                 <div>
+                                    <h4 class="text-xl font-bold text-white">Intern</h4>
+                                    <p class="text-gray-300 mt-2">Gained foundational knowledge of the digital advertising ecosystem by shadowing campaign planning and delivery teams.</p>
+                                     <ul class="list-disc list-inside text-gray-400 mt-2 space-y-1">
+                                        <li>Developed ability to craft clear and professional emails for various audiences.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="education" class="py-20 bg-gray-800">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 reveal">
+                <h2 class="text-3xl font-bold text-center text-white mb-12">Education</h2>
+                <div class="max-w-3xl mx-auto space-y-8">
+                    <div>
+                        <h3 class="text-2xl font-bold text-white">Master's of Business Analytics (MBAN)</h3>
+                        <a href="https://udayton.edu/" target="_blank" rel="noopener noreferrer" class="text-lg text-indigo-400 font-semibold hover:underline">University of Dayton, Dayton, Ohio, USA</a>
+                        <p class="text-sm text-gray-400 mt-1">Sep 2024 - May 2026</p>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-white">Bachelor of Science in Mathematics, Electronics, Computer Science</h3>
+                        <a href="http://www.avanthi.edu.in/" target="_blank" rel="noopener noreferrer" class="text-lg text-indigo-400 font-semibold hover:underline">Avanthi Degree and P.G College, Hyderabad, Telangana, India</a>
+                        <p class="text-sm text-gray-400 mt-1">Apr 2020 - Jul 2022</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="py-20">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 reveal">
+                <h2 class="text-3xl font-bold text-center text-white mb-12">Projects & Research</h2>
+                <div id="projects-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    </div>
+            </div>
+        </section>
+
+        <section id="skills" class="py-20 bg-gray-800">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 reveal">
+                <h2 class="text-3xl font-bold text-center text-white mb-12">Skills</h2>
+                <div class="max-w-4xl mx-auto space-y-8">
+                    <div>
+                        <h4 class="text-xl font-semibold text-indigo-400 mb-4 text-center">Programming & Databases</h4>
+                        <div class="flex flex-wrap justify-center gap-4">
+                            <span class="bg-gray-700 text-white text-lg font-medium px-4 py-2 rounded-full">R</span>
+                            <span class="bg-gray-700 text-white text-lg font-medium px-4 py-2 rounded-full">Python</span>
+                            <span class="bg-gray-700 text-white text-lg font-medium px-4 py-2 rounded-full">SQL</span>
+                            <span class="bg-gray-700 text-white text-lg font-medium px-4 py-2 rounded-full">HTML</span>
+                            <span class="bg-gray-700 text-white text-lg font-medium px-4 py-2 rounded-full">Java</span>
+                            <span class="bg-gray-700 text-white text-lg font-medium px-4 py-2 rounded-full">C++</span>
+                        </div>
+                    </div>
+                     <div>
+                        <h4 class="text-xl font-semibold text-indigo-400 mb-4 text-center">Tools & Software</h4>
+                        <div class="flex flex-wrap justify-center gap-4">
+                            <span class="bg-gray-700 text-white text-lg font-medium px-4 py-2 rounded-full">Tableau</span>
+                            <span class="bg-gray-700 text-white text-lg font-medium px-4 py-2 rounded-full">MS Excel</span>
+                            <span class="bg-gray-700 text-white text-lg font-medium px-4 py-2 rounded-full">Salesforce</span>
+                            <span class="bg-gray-700 text-white text-lg font-medium px-4 py-2 rounded-full">Jira</span>
+                            <span class="bg-gray-700 text-white text-lg font-medium px-4 py-2 rounded-full">Operative</span>
+                            <span class="bg-gray-700 text-white text-lg font-medium px-4 py-2 rounded-full">SPSS</span>
+                             <span class="bg-gray-700 text-white text-lg font-medium px-4 py-2 rounded-full">Radiant</span>
+                        </div>
+                    </div>
+                    <div>
+                        <h4 class="text-xl font-semibold text-indigo-400 mb-4 text-center">Analytics & Soft Skills</h4>
+                         <div class="flex flex-wrap justify-center gap-4">
+                            <span class="bg-gray-700 text-white text-lg font-medium px-4 py-2 rounded-full">Predictive Modeling</span>
+                            <span class="bg-gray-700 text-white text-lg font-medium px-4 py-2 rounded-full">Project Management</span>
+                            <span class="bg-gray-700 text-white text-lg font-medium px-4 py-2 rounded-full">Critical Thinking</span>
+                            <span class="bg-gray-700 text-white text-lg font-medium px-4 py-2 rounded-full">Collaboration</span>
+                            <span class="bg-gray-700 text-white text-lg font-medium px-4 py-2 rounded-full">Communication</span>
+                            <span class="bg-gray-700 text-white text-lg font-medium px-4 py-2 rounded-full">Research</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="certifications" class="py-20">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 reveal">
+                <h2 class="text-3xl font-bold text-center text-white mb-12">Certifications & Achievements</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    
+                    <div class="bg-gray-800 rounded-lg overflow-hidden shadow-lg transition-all duration-300 hover:shadow-indigo-500/50 hover:-translate-y-2">
+                        <img class="w-full h-56 object-contain bg-white p-4" src="MM Employee of the Quarter_page-0001.png" alt="Employee of the Quarter Award">
+                        <div class="p-6 text-center">
+                            <h3 class="text-xl font-bold text-white mb-2">Employee of the Quarter</h3>
+                            <p class="text-gray-400">2022</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-800 rounded-lg overflow-hidden shadow-lg transition-all duration-300 hover:shadow-indigo-500/50 hover:-translate-y-2">
+                        <img class="w-full h-56 object-contain bg-white p-4" src="Client's fav award.PNG" alt="Client's Favorite Award">
+                        <div class="p-6 text-center">
+                            <h3 class="text-xl font-bold text-white mb-2">Client's Favorite Award</h3>
+                            <p class="text-gray-400">2023</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-800 rounded-lg overflow-hidden shadow-lg transition-all duration-300 hover:shadow-indigo-500/50 hover:-translate-y-2">
+                        <img class="w-full h-56 object-contain bg-white p-4" src="Spot award_page-0001.png" alt="Spot Award">
+                        <div class="p-6 text-center">
+                            <h3 class="text-xl font-bold text-white mb-2">Spot Award for Behavior</h3>
+                            <p class="text-gray-400">2024</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="py-20 bg-gray-800">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 reveal">
+                <h2 class="text-3xl font-bold text-center text-white mb-12">Get In Touch</h2>
+                <p class="text-center text-gray-400 mb-8">Feel free to reach out to me at <a href="mailto:pavan.gudimalla10@gmail.com" class="text-indigo-400 hover:underline">pavan.gudimalla10@gmail.com</a> or use the form below.</p>
+                <div class="max-w-lg mx-auto">
+                    <form id="contact-form" action="https://formspree.io/f/xqalwdjq" method="POST" class="space-y-6">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-300">Name</label>
+                            <input type="text" name="name" id="name" required class="mt-1 block w-full bg-gray-700 border-gray-600 rounded-md shadow-sm py-2 px-3 text-white focus:outline-none focus:ring-indigo-500 focus:border-indigo-500">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-300">Email</label>
+                            <input type="email" name="email" id="email" required class="mt-1 block w-full bg-gray-700 border-gray-600 rounded-md shadow-sm py-2 px-3 text-white focus:outline-none focus:ring-indigo-500 focus:border-indigo-500">
+                        </div>
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-gray-300">Message</label>
+                            <textarea name="message" id="message" rows="4" required class="mt-1 block w-full bg-gray-700 border-gray-600 rounded-md shadow-sm py-2 px-3 text-white focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"></textarea>
+                        </div>
+                        <div>
+                            <button type="submit" class="w-full bg-indigo-600 text-white font-bold py-3 px-6 rounded-lg hover:bg-indigo-700 transition-transform duration-300 hover:scale-105">
+                                Send Message
+                            </button>
+                        </div>
+                    </form>
+                    <div id="form-status" class="mt-4 text-center"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-800">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-6 text-center text-gray-400">
+            <p>&copy; 2025 Pavan Kumar Gudimalla. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // --- INTERACTIVITY SCRIPT ---
+
+        // 1. Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuOpenIcon = document.getElementById('menu-open-icon');
+        const menuCloseIcon = document.getElementById('menu-close-icon');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            menuOpenIcon.classList.toggle('hidden');
+            menuCloseIcon.classList.toggle('hidden');
+        });
+
+        // 2. Typing effect
+        const typingTextElement = document.getElementById('typing-text');
+        const textToType = "Pavan Kumar Gudimalla";
+        let charIndex = 0;
+
+        function type() {
+            if (charIndex < textToType.length) {
+                typingTextElement.textContent += textToType.charAt(charIndex);
+                charIndex++;
+                setTimeout(type, 100);
+            }
+        }
+
+        // 3. Scroll reveal animations
+        const revealElements = document.querySelectorAll('.reveal');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        revealElements.forEach(el => observer.observe(el));
+
+
+        // --- CONTENT SCRIPT ---
+
+        // Data for projects
+        const projects = [
+             {
+                title: 'Data Challenge: AI Global Trade',
+                description: 'An analysis of U.S. and international trade data to uncover insights for AI-driven trade strategies, focusing on Ohio\'s export trends.',
+                imageUrl: 'https://placehold.co/600x400/312e81/FFFFFF?text=Data+Challenge',
+                reportUrl: 'AI-Global-Trade_Pavan.html',
+                dataUrl: '#'
+            },
+            {
+                title: 'Instagram Engagement Analysis',
+                description: 'Performed independent research using R-based regression and Excel Solver to identify factors driving likes and optimize posting strategy. Please find the report and download the Excel model below.',
+                imageUrl: 'https://placehold.co/600x400/312e81/FFFFFF?text=Insta+Analysis',
+                reportUrl: 'Final Report.nb.nb.html',
+                dataUrl: 'max likes model.xlsx'
+            },
+            {
+                title: 'Customer Churn Prediction Model',
+                description: 'Built a predictive model in R using classification techniques to identify key drivers of customer retention and forecast churn.',
+                imageUrl: 'https://placehold.co/600x400/312e81/FFFFFF?text=Churn+Model',
+                reportUrl: 'Pavan-Gudimalla_Final-Project.html',
+                dataUrl: '#'
+            },
+            {
+                title: 'Inventory Optimization Simulation',
+                description: 'Used Excel-based Monte Carlo simulation and heuristic modeling to optimize inventory for a field service network, reducing costs and improving efficiency.  Please find the report and download the simulation model below.',
+                imageUrl: 'https://placehold.co/600x400/312e81/FFFFFF?text=Inventory+Sim',
+                reportUrl: 'Case Study_Team02 _Case 5.docx',
+                dataUrl: 'Swirltubs_raw_data_Case Part 2,3,4 and 5(TEAM_02).xlsm'
+            },
+            {
+                title: 'Global Fertility Trends Dashboard',
+                description: 'Created an interactive Tableau dashboard to analyze global fertility trends and their socio-political impacts using multi-dimensional data storytelling. Please find the report and download the Tableau file below.',
+                imageUrl: 'https://placehold.co/600x400/312e81/FFFFFF?text=Tableau+Dash',
+                reportUrl: 'Five Visualizations_My Data-Driven Story about Fertility Rates_Pavan Gudimalla.pdf',
+                dataUrl: 'My Data-Driven Story about Fertility Rates_Pavan Gudimalla.twb'
+            }
+        ];
+
+        // Function to create and append project cards
+        function displayProjects() {
+            const projectsContainer = document.getElementById('projects-container');
+            projects.forEach((project, index) => {
+                // --- Create Report Button ---
+                let reportButton;
+                if (project.reportUrl && project.reportUrl !== '#') {
+                    reportButton = `
+                        <a href="${project.reportUrl}" target="_blank" class="inline-block bg-indigo-600 text-white font-semibold py-2 px-4 rounded-lg hover:bg-indigo-700 transition-transform duration-300 hover:scale-105 text-sm">
+                            View Report
+                        </a>`;
+                } else {
+                    reportButton = `
+                        <span class="inline-block bg-gray-600 text-gray-400 font-semibold py-2 px-4 rounded-lg cursor-not-allowed text-sm">
+                            No Report
+                        </span>`;
+                }
+
+                // --- Create Data File Button ---
+                let dataButton;
+                if (project.dataUrl && project.dataUrl !== '#') {
+                    dataButton = `
+                        <a href="${project.dataUrl}" download class="inline-block bg-green-600 text-white font-semibold py-2 px-4 rounded-lg hover:bg-green-700 transition-transform duration-300 hover:scale-105 text-sm">
+                            Download File
+                        </a>`;
+                } else {
+                    dataButton = `
+                        <span class="inline-block bg-gray-600 text-gray-400 font-semibold py-2 px-4 rounded-lg cursor-not-allowed text-sm">
+                            No Data File
+                        </span>`;
+                }
+
+                const projectCard = `
+                    <div class="bg-gray-800 rounded-lg overflow-hidden shadow-lg transition-all duration-300 hover:shadow-indigo-500/50 hover:-translate-y-2 reveal" style="transition-delay: ${index * 100}ms;">
+                        <img class="w-full h-56 object-cover" src="${project.imageUrl}" alt="${project.title}">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-white mb-2">${project.title}</h3>
+                            <p class="text-gray-400 mb-4 text-base">${project.description}</p>
+                            <div class="mt-4 flex justify-center gap-2">
+                                ${reportButton}
+                                ${dataButton}
+                            </div>
+                        </div>
+                    </div>
+                `;
+                projectsContainer.innerHTML += projectCard;
+            });
+             // We need to re-run the observer for the dynamically added project cards
+            const newRevealElements = projectsContainer.querySelectorAll('.reveal');
+            newRevealElements.forEach(el => observer.observe(el));
+        }
+
+        // Contact form submission with Formspree
+const contactForm = document.getElementById('contact-form');
+const formStatus = document.getElementById('form-status');
+
+contactForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    const formData = new FormData(contactForm);
+    
+    fetch(contactForm.action, {
+        method: 'POST',
+        body: formData,
+        headers: {
+            'Accept': 'application/json'
+        }
+    }).then(response => {
+        if (response.ok) {
+            formStatus.textContent = "Thank you for your message!";
+            formStatus.className = 'text-green-400';
+            contactForm.reset();
+        } else {
+            formStatus.textContent = "Oops! There was a problem submitting your form.";
+            formStatus.className = 'text-red-400';
+        }
+    }).catch(error => {
+        formStatus.textContent = "Oops! There was a problem submitting your form.";
+        formStatus.className = 'text-red-400';
+    });
+
+    setTimeout(() => {
+        formStatus.textContent = '';
+    }, 5000);
+});
+
+        // Initialize content and animations when the page loads
+        window.onload = () => {
+            type();
+            displayProjects();
+        };
+    </script>
+
+</body>
+</html>
